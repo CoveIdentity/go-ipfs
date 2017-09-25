@@ -13,7 +13,7 @@ PATH := $(realpath $(d)):$(PATH)
 # DEPS_OO_$(d) += pin/internal/pb/header.pb.go unixfs/pb/unixfs.pb.go
 
 CONFIG_COMMIT ?= github.com/ipfs/go-ipfs/repo/config.CurrentCommit=$(shell git rev-parse --short HEAD)
-CONFIG_PLUGIN_PATH ?= github.com/ipfs/go-ipfs/repo/config.SystemPluginPath=${PLUGIN_PATH}
+CONFIG_PLUGIN_PATH = github.com/ipfs/go-ipfs/repo/config.SystemPluginPath=${PLUGIN_PATH}
 
 $(d)_flags =-ldflags="-X ${CONFIG_COMMIT} -X ${CONFIG_PLUGIN_PATH}"
 
